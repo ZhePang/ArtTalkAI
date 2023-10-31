@@ -21,3 +21,24 @@ movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
 movies.each do |movie|
   Movie.create!(movie)
 end
+
+
+## For arttalkAI
+arts = [
+  {:title => 'Mona Lisa',
+   :description => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+   :link => 'monalisa.jpeg',
+   :release_date => '01-Jan-1503'},
+  {:title => 'Starry Night',
+   :description => 'Description of Art 2.',
+   :link => 'starrynight.jpeg',
+   :release_date => '06-Jun-1789'},
+  {:title => 'Tsunami',
+   :description => 'Description of Art 3, Tsunami. Blah blah blah.',
+   :link => 'tsunami.png',
+   :release_date => '31-Dec-800'},
+]
+
+arts.each do |art|
+  Art.create!(art)
+end

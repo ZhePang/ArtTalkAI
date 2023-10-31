@@ -20,6 +20,10 @@ For building
 DB related  
 - rake db:migrate
 - rake db:seed
+- rails generate migration
+
+Checking what objects are inside art DB
+- rake custom:list_all_arts
 
 Running server  
 - rails server
