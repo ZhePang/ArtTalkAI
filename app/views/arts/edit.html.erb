@@ -1,0 +1,10 @@
+<h2>Edit Existing Art</h2>
+<%= form_tag art_path(@art), :method => :put do %>
+  <%= label :art, :title, 'Title', :class => 'col-form-label' %>
+  <%= text_field :art, 'title', :class => 'form-control' %>
+  <%= label :art, :release_date, 'Released On', :class => 'col-form-label'  %>
+  <%= date_select :art, :release_date, {}, :class => 'form-control col-2 d-inline' %>
+  <br/>
+  <%= submit_tag 'Update Art Info', :class => 'btn btn-primary' %>
+  <%= link_to 'Cancel', arts_path, :class => 'btn btn-secondary' %>
+<% end %>
