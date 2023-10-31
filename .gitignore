@@ -1,4 +1,7 @@
-rottenpotatoes/.bundle/
+coverage/
+.bundle/
+.idea/
+/.bundle/
 rottenpotatoes/.rspec
 rottenpotatoes/.ruby-version
 rottenpotatoes/coverage/
