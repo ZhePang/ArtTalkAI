@@ -1,6 +1,9 @@
 coverage/
 .bundle/
 .idea/
+db/
+log/
+tmp/
 /.bundle/
 rottenpotatoes/.rspec
 rottenpotatoes/.ruby-version

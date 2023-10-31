@@ -12,10 +12,17 @@ Name: Run Guo
 UNI: rg3551  
 
 ## Commands
+For building  
 - bundle install --without production  
 - bundle exec cucumber  
-- bundle exec rspec  
-  
+- bundle exec rspec
+
+DB related  
+- rake db:migrate
+- rake db:seed
+
+Running server  
+- rails server
 
 ## Notes
 - Need to be using ruby 2.6.6  
