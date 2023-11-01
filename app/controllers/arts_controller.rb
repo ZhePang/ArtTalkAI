@@ -8,6 +8,7 @@ class ArtsController < ApplicationController
 
   def index
     @arts = Art.all
+    @first_art = @arts.first # just for an example...
   end
 
   def new
