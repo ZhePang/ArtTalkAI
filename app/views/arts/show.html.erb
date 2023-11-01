@@ -1,20 +1,2 @@
-<!--  app/views/arts/show.html.erb -->
-<h2>Details about <em><%= @art.title %></em></h2>
 
-<ul id="details">
-  <li>
-    Released on:
-    <%= @art.release_date.strftime("%B %d, %Y") %>
-  </li>
-</ul>
 
-<h3>Description:</h3>
-<p id="description">
-  <%= @art.description %>
-</p>
-
-<div class="row">
-  <%= link_to 'Edit', edit_art_path(@art), :class => 'btn btn-primary col-2' %>
-  <%= link_to 'Delete', art_path(@art), 'data-method' => 'delete', 'data-confirm' => 'Are you sure?', :class => 'btn btn-danger col-2' %>
-  <%= link_to 'Back to art list', arts_path, :class => 'btn btn-primary col-2' %>
-</div>

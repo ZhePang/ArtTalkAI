@@ -1,14 +1,27 @@
 class ArtsController < ApplicationController
+  
+  before_action :define_content
+  
+  
+  def define_content
+    @content = "empty"
+    @first_art = Art.first # just for an example...
+  end
 
   def show
+    @content = "show"
     id = params[:id] # retrieve art ID from URI route
     @art = Art.find(id) # look up art by unique ID
+    @first_art = @art
     # will render app/views/arts/show.<extension> by default
   end
 
   def index
     @arts = Art.all
-    @first_art = @arts.first # just for an example...
+    @first_art = Art.find(DateTime.now.strftime('%d').to_i % (Art.count) + 1) # just for an example...
+    
+    #@content = "table"
+    @content = "show"
   end
 
   def new

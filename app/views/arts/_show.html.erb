@@ -1,0 +1,23 @@
+<!--  app/views/arts/show.html.erb -->
+<h1>
+    <%= @first_art.title %>
+</h1>
+<% if @art.nil? %>
+    <%= link_to display_art(@first_art) , art_path(@first_art.id) %> 
+    <h2> Click the Image for More Details </h2>
+<% else %>
+    <%= display_art(@first_art) %>
+    <h2>Details about <em><%= @art.title %></em></h2>
+
+    <ul id="details">
+    <li>
+        Released on:
+        <%= @art.release_date.strftime("%B %d, %Y") %>
+    </li>
+    </ul>
+
+    <h3>Description:</h3>
+    <p id="description">
+    <%= @art.description %>
+    </p>
+<% end %>
