@@ -2,7 +2,6 @@ class CreateMovies < ActiveRecord::Migration[6.0]
 
 
   def up
-
     # TODO delete this later when we don't need movies for the initial page anymore
     # TODO jlc2332
     create_table :movies do |t|

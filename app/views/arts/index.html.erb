@@ -1,33 +1,6 @@
 <!--  This file is app/views/arts/index.html.erb -->
-<h2>All Arts</h2>
 <%#  Part 2: Start here... %>
 
 <!--TODO SAMPLE. Need to actually display an art of the day with better UX-->
-<%= display_art(@first_art) %>
 <!--TODO SAMPLE. Need to actually display an art of the day with better UX-->
-
-<table class="table table-striped col-md-12" id="arts">
-  <thead>
-    <tr>
-      <th>Art Title</th>
-      <th>Release Date</th>
-      <th>More Info</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @arts.each do |art| %>
-      <tr>
-        <td>
-          <%= art.title %>
-        </td>
-        <td>
-          <%= art.release_date %>
-        </td>
-        <td>
-          <%= link_to "More about #{art.title}", art_path(art) %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'Add new art', new_art_path, :class => 'btn btn-primary' %>
+<div style="margin-top: 300px; "></div>
