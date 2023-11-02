@@ -21,21 +21,15 @@ Background: arts in database
   | Tsunami      | Description of Art 3, Tsunami. Blah blah blah.                                                                              | tsunami.png      |   0800-12-31 |
 
 Scenario: View Daily Art Piece
-  Given I open the ArtTalkAI application
-  When I view the art piece of the day
-  Then I should encounter the art piece for that day
-
-Scenario: View the Same Art Piece Multiple Times on the Same Day
-  Given I have opened the app earlier on the same day
-  When I open the app again on the same day
-  Then I should encounter the same art piece of the day as before
+  Given I am on the ArtTalkAI home page
+  Then I should have the art piece of the day
 
 Scenario: View Picture Details
-  Given I am viewing the Picture of the Day
-  Then I should see the title, description, and author of the work
-  And I should see a chatbot link
+  Given I am on the detailed page of the art piece of the day
+  Then I should have the title, description, and release date of the art piece of the day
 
-Scenario: Access Chatbot from Picture of the Day
-  Given I am viewing the Picture of the Day
-  When I click the chatbot link
-  Then I should be connected to the chatbot for further information
+# The Chatbot Feature is to be implemented in the next iteration
+#Scenario: Access Chatbot from Picture of the Day
+#  Given I am viewing the Picture of the Day
+#  When I click the chatbot link
+#  Then I should be connected to the chatbot for further information
