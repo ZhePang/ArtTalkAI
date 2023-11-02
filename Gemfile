@@ -6,7 +6,7 @@ gem 'rails', '6.0.4'
 
 # for Heroku deployment 
 group :development, :test do
-  gem 'sqlite3', '1.4'
+  gem 'pg', '< 1.0'
   gem 'bootstrap', '~> 5.0'
   gem 'byebug'
   gem 'database_cleaner', '1.4.1'
