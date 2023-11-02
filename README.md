@@ -31,3 +31,5 @@ Running server
 ## Notes
 - Need to be using ruby 2.6.6  
 - Please refer to README.md in the git repo root directory.  
+- DB : postgresql-triangular-46610
+- App : enigmatic-shore-08561
