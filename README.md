@@ -15,8 +15,21 @@ UNI: rg3551
 1. git clone this app somewhere locally `git clone git@github.com:ZhePang/ArtTalkAI.git`
 2. Change into the ArtTalkAI directory `cd ArtTalkAI`.
 3. Run this command to get local dependencies installed: `bundle install --without production`
-4. Run these commands to setup the DB: `rake db:migrate`. Then: `rake db:seed`.
+4. To setup the DB, we are using PostGreSQL for heroku deployment. We need to set this up locally.
+5. install postgresql/psql locally. More info here: https://devcenter.heroku.com/articles/local-setup-heroku-postgres
+6. Run this command `sudo -u postgres psql`. in the command line it should say `postgres=#` which means your within the postgres interface.
+7. Run all of these commands to set it up.
+  - `CREATE DATABASE app_devo1;`
+  - `CREATE DATABASE app_prod1;`
+  - `CREATE USER username WITH PASSWORD 'password';`
+  - `ALTER ROLE username WITH SUPERUSER;`
+  - `GRANT ALL PRIVILEGES ON DATABASE app_devo1 TO username;`
+  - `GRANT ALL PRIVILEGES ON DATABASE app_prod1 TO username;`
+  - `EXIT`
+4. Now run these commands to setup the DB: `rake db:migrate`. Then: `rake db:seed`.
 5. Now, run `rails server`. On your browser, go to `localhost:3000` to view the page!
+6. If you are seeing an error regarding a database not existing, or DB art objects not beign present, then try to recreate the DB again with these commands:
+  - `rake db:drop` --> `rake db:create` --> `rake db:migrate` --> `rake db:seed`. Now try `rails server` again the page should load now.
 
 ## How To Add More Art Pieces
 1. From the ArtTalkAI directory, go to the `db` folder.
