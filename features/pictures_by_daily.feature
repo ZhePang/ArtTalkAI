@@ -15,10 +15,10 @@ Feature: Display Picture of the Day
 Background: arts in database
 
   Given the following arts exist:
-  | title        | description                                                                                                                 | link             | release_date |
-  | Mona Lisa    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. | monalisa.jpeg    |   1503-01-01 |
-  | Starry Night | Description of Art 2.                                                                                                       | starrynight.jpeg |   1789-06-06 |
-  | Tsunami      | Description of Art 3, Tsunami. Blah blah blah.                                                                              | tsunami.png      |   0800-12-31 |
+  | id | title        | description                                                                                                                 | link             | release_date |
+  | 1 | Mona Lisa    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. | monalisa.jpeg    |   1503-01-01 |
+  | 2 | Starry Night | Description of Art 2.                                                                                                       | starrynight.jpeg |   1789-06-06 |
+  | 3 | Tsunami      | Description of Art 3, Tsunami. Blah blah blah.                                                                              | tsunami.png      |   0800-12-31 |
 
 Scenario: View Daily Art Piece
   Given I am on the ArtTalkAI home page

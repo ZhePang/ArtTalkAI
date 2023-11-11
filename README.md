@@ -20,16 +20,23 @@ UNI: rg3551
 6. Run this command `sudo -u postgres psql`. in the command line it should say `postgres=#` which means your within the postgres interface.
 7. Run all of these commands to set it up.
   - `CREATE DATABASE app_devo1;`
+  - `CREATE DATABASE app_test1;`
   - `CREATE DATABASE app_prod1;`
   - `CREATE USER username WITH PASSWORD 'password';`
   - `ALTER ROLE username WITH SUPERUSER;`
   - `GRANT ALL PRIVILEGES ON DATABASE app_devo1 TO username;`
+  - `GRANT ALL PRIVILEGES ON DATABASE app_test1 TO username;`
   - `GRANT ALL PRIVILEGES ON DATABASE app_prod1 TO username;`
   - `EXIT`
 4. Now run these commands to setup the DB: `rake db:migrate`. Then: `rake db:seed`.
 5. Now, run `rails server`. On your browser, go to `localhost:3000` to view the page!
 6. If you are seeing an error regarding a database not existing, or DB art objects not beign present, then try to recreate the DB again with these commands:
   - `rake db:drop` --> `rake db:create` --> `rake db:migrate` --> `rake db:seed`. Now try `rails server` again the page should load now.
+
+## How to test art piece a day feature
+1. ArtTalkAI depends on the system time to show the art of the day.
+2. So, if you want to see the behavior for what art piece is shown per day you need to change your computer system time to a different day.
+3. After that refresh the page and you should see a different art-of-the-day!
 
 ## How To Add More Art Pieces
 1. From the ArtTalkAI directory, go to the `db` folder.
@@ -46,7 +53,12 @@ UNI: rg3551
 5. Save the file, now from the ArttalkAI directory, run the command to complete the migration `rails db:migrate`.
 6. To note, all migrations are stored and logged forever in that migrate folder. You can't modify an existing migration, you have to create a new one!
 
-## Misc Commands
+## How to run tests
+1. After everything is set up from above...
+2. `bundle exec cucumber` for cucumber tests
+3. `bundle exec rspec` for rspec tests
+
+## Misc Notes and Commands
 For building  
 - bundle install --without production  
 - bundle exec cucumber  

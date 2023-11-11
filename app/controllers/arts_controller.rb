@@ -18,7 +18,7 @@ class ArtsController < ApplicationController
 
   def index
     @arts = Art.all
-    @first_art = Art.find(DateTime.now.strftime('%d').to_i % (Art.count) + 1) # just for an example...
+    @first_art = Art.find(DateTime.now.strftime('%d').to_i % (Art.count) + 1)
     
     #@content = "table"
     @content = "show"
