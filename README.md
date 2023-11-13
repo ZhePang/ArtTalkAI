@@ -30,7 +30,7 @@ UNI: rg3551
   - `EXIT`
 4. Now run these commands to setup the DB: `rake db:migrate`. Then: `rake db:seed`.
 5. Now, run `rails server`. On your browser, go to `localhost:3000` to view the page!
-6. If you are seeing an error regarding a database not existing, or DB art objects not beign present, then try to recreate the DB again with these commands:
+6. If you are seeing an error regarding a database not existing, or DB art objects not being present, then try to recreate the DB again with these commands:
   - `rake db:drop` --> `rake db:create` --> `rake db:migrate` --> `rake db:seed`. Now try `rails server` again the page should load now.
 
 ## How to test art piece a day feature
