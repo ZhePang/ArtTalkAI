@@ -1,23 +1,68 @@
 <!--  app/views/arts/show.html.erb -->
-<h1>
-    <%= @first_art.title %>
-</h1>
-<% if @art.nil? %>
-    <%= link_to display_art(@first_art) , art_path(@first_art.id) %> 
-    <h2> Click the Image for More Details </h2>
-<% else %>
-    <%= display_art(@first_art) %>
-    <h2>Details about <em><%= @art.title %></em></h2>
 
-    <ul id="details">
-    <li>
-        Released on:
-        <%= @art.release_date.strftime("%B %d, %Y") %>
-    </li>
-    </ul>
 
-    <h3>Description:</h3>
-    <p id="description">
-    <%= @art.description %>
-    </p>
+<!--show gallery only if the flag is set to true. Its set from going to art_path("gallery") -->
+<!--Otherwise, any other art_path(<SOME_ART_ID>) will display the regular page.-->
+<% if @show_gallery == true %>
+  <!-- start of gallery code -->
+  <%= link_to "Back to art of the day", arts_path %>
+  <br/><br/>
+  <div class="container">
+    <h1>ArtTalkAI Gallery</h1>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Artwork</th>
+        <th>Title</th>
+        <th>Release Date</th>
+        <th>Details</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @arts.each do |art| %>
+        <tr>
+          <td><%= image_tag art.link, class: "img-fluid", style: "max-width: 200px; height: auto;" %></td>
+          <td><%= art.title %></td>
+          <td><%= art.release_date.strftime("%B %d, %Y") %></td>
+          <td><%= art.description %></td>
+          <th><%= link_to "Click to Read More", art_path(art.id) %></th>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br/><br/>
+  <%= link_to "Back to art of the day", arts_path %>
+  <!-- end of gallery code -->
+
+<% else %> <!-- show gallery is false... so just display art and possibly its details like usual -->
+  <%= link_to "Click here to view the Gallery Section", art_path("gallery") %>
+  <br/><br/>
+  <h1>ArtTalkAI</h1>
+  <h2>
+    Today's Date: <%= @today_date %>
+  </h2>
+  <h2>
+    Art Of The Day: <%= @first_art.title %>
+  </h2>
+  <% if @art.nil? %>
+        <%= image_tag @first_art.link, class: "img-fluid", style: "max-width: 300px; height: auto;" %>
+        <h2><%= link_to "Click For More Details", art_path(@first_art.id) %></h2>
+    <% else %>
+        <%= image_tag @first_art.link, class: "img-fluid", style: "max-width: 300px; height: auto;" %>
+        <br/><br/>
+        <h2>Details about <em><%= @art.title %></em></h2>
+
+        <ul id="details">
+        <li>
+            Released on:
+            <%= @art.release_date.strftime("%B %d, %Y") %>
+        </li>
+        </ul>
+
+        <h3>Description:</h3>
+        <p id="description">
+        <%= @art.description %>
+        </p>
+    <% end %>
 <% end %>

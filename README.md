@@ -75,8 +75,12 @@ Checking what objects are inside art DB
 Running server  
 - rails server
 
+View all possible routes
+- rails routes
+
 ## Notes
 - Need to be using ruby 2.6.6  
 - Please refer to README.md in the git repo root directory.  
 - DB : postgresql-triangular-46610
 - App : enigmatic-shore-08561
+- Lucid chart (plans, division of work, app diagrams, etc): https://lucid.app/lucidspark/d9f17524-badb-411f-bb76-b369b13f4705/edit?invitationId=inv_de2c4178-d16f-414f-97ea-470f00e82bff&page=0_0
