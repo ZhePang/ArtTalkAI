@@ -42,7 +42,7 @@ UNI: rg3551
 1. From the ArtTalkAI directory, go to the `db` folder.
 2. Inside of `seeds.rb`, copy and paste one of the existing art objects and modify it accordingly. All the fields should be self-explanatory.
 3. For the "link" field, note that this is just a photo file name. Any new pictures should be stored into `/app/assets/images` for the frontend to render it properly.
-4. Rerun `rake db:seed`.
+4. Run `rake db:reset`. It will delete all tables and all seeds, and then regen tables and add new seeds. That way the IDs will start from 1 again.
 5. To confirm your object is actually added properly, run this command to print all the objects within the DB to console: `rake custom:list_all_arts`.
 
 ## How to modify the DB with new fields
@@ -84,3 +84,4 @@ View all possible routes
 - DB : postgresql-triangular-46610
 - App : enigmatic-shore-08561
 - Lucid chart (plans, division of work, app diagrams, etc): https://lucid.app/lucidspark/d9f17524-badb-411f-bb76-b369b13f4705/edit?invitationId=inv_de2c4178-d16f-414f-97ea-470f00e82bff&page=0_0
+- Art source: https://www.brushwiz.com/most-famous-paintings
