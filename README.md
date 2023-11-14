@@ -42,6 +42,16 @@ UNI: rg3551
 2. So, if you want to see the behavior for what art piece is shown per day you need to change your computer system time to a different day.
 3. After that refresh the page and you should see a different art-of-the-day!
 
+## How to use ArtGuide AI Chatbot
+1. Go to the detailed page of any art piece and click the button `Talk to our ArtGuide?`. You would be directed to the chatbot page.
+2. The first time you open a conversation of a new art piece, the ArtGuide would already has the information of the art piece and would welcome you. You can directly ask questions like "What is the background of the painter?", "What does this painting represents for?", etc, without the need to intentionally specify the art piece
+3. You can go back to the specific art piece by clicking the `Back to Details` link.
+4. Once you have a conversation of one art piece, next time you go to the ArtGuide from the detailed page of that art piece, you would automatically be at the previous conversation.
+5. The conversations on each art piece are stored in the database and you can select on the chat list at the left of the page to go to existing conversations.
+6. If you click the `New Chat` button, you would have a new conversation where the ArtGuide serves just like a chatbot without any information. You can go back to the gallery by clicking `Go to Gallery`.
+7. ArtGuide is powered by OpenAI API and sometimes has long respond times. Please wait for the response within 30 seconds.
+8. Feature of Deleting past conversations is still in development and will be available in the next iteration. Do not delete your past conversation at this time. 
+
 ## How To Add More Art Pieces
 1. From the ArtTalkAI directory, go to the `db` folder.
 2. Inside of `seeds.rb`, copy and paste one of the existing art objects and modify it accordingly. All the fields should be self-explanatory.

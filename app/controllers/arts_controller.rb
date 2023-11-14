@@ -16,10 +16,12 @@ class ArtsController < ApplicationController
       @show_gallery = true
       @arts = Art.all
       @first_art = Art.find(DateTime.now.strftime('%d').to_i % (Art.count) + 1)
+      session.delete(:art_info)
     else
       @show_gallery = false
       @art = Art.find(id) # look up art by unique ID
       @first_art = Art.find(id) # look up art by unique ID
+      session[:art_info] = { id: @art.id, title: @art.title }
       # will render app/views/arts/show.<extension> by default
     end
   end
@@ -30,6 +32,7 @@ class ArtsController < ApplicationController
     @first_art = Art.find(DateTime.now.strftime('%d').to_i % (Art.count) + 1)
     @today_date = DateTime.now.strftime("%B %d, %Y")
     @content = "show"
+    session.delete(:art_info)
   end
 
   def new

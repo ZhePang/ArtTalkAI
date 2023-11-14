@@ -1,0 +1,45 @@
+<turbo-frame id="current-chat">
+    <% if chat.title %>
+        <%= link_to "Back to Details", art_path(Art.find_by(title: chat.title)) %>
+    <% else %>
+        <%= link_to "Go to Gallery", art_path("gallery") %>
+    <% end %>
+  <div id="<%= dom_id chat %>" class="container-fluid vh-75">
+    <div id="history-area" class="h-100">
+      <div class='row'>
+        <div class='col-md-1'>
+          ArtGuide
+        </div>
+        <div class='col'>
+          <%=simple_format chat.welcome%>
+        </div>
+      </div>
+      <% unless chat.q_and_a.blank? %>
+        <% chat.q_and_a.each do |question, answer|%>
+          <div class='row mb-2'>
+            <div class='col-md-1'>
+              You
+            </div>
+            <div class='col'>
+              <%=simple_format question %>
+            </div>
+          </div>
+          <div class='row'>
+            <div class='col-md-1'>
+              ArtGuide
+            </div>
+            <div class='col'>
+              <%=simple_format answer%>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <%= form_with(model: chat) do |form| %>
+    <div class="input-group mb-3">
+      <%= form.text_field :message, placeholder: 'Send a message', class: 'form-control' %>
+      <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fa-duotone fa-paper-plane-top"></i></button>
+    </div>
+  <% end %>
+</turbo-frame>

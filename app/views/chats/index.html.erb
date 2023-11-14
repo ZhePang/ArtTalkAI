@@ -1,0 +1,5 @@
+<p style="color: green"><%= notice %></p>
+You don't have any chats yet. Create one by clicking
+<%= form_with(model: Chat.new) do |form| %>
+  <%= form.submit 'Here', class: 'btn btn-dark border-light' %>
+<% end %>

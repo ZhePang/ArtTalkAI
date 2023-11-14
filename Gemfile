@@ -15,6 +15,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'ZenTest', '4.11.2'
+  gem "ruby-openai"
+  gem "dotenv-rails"
+  gem "turbo-rails"
 end
 
 group :development do
