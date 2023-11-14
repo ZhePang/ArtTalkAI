@@ -14,11 +14,15 @@ UNI: rg3551
 ## How To Setup and Run This App Locally
 1. git clone this app somewhere locally `git clone git@github.com:ZhePang/ArtTalkAI.git`
 2. Change into the ArtTalkAI directory `cd ArtTalkAI`.
-3. Run this command to get local dependencies installed: `bundle install --without production`
-4. To setup the DB, we are using PostGreSQL for heroku deployment. We need to set this up locally.
-5. install postgresql/psql locally. More info here: https://devcenter.heroku.com/articles/local-setup-heroku-postgres
+3. To setup the DB, we are using PostGreSQL for heroku deployment. We need to set this up locally.
+4. Install postgresql/psql locally. Run the following commands:
+  - `sudo apt-get install postgresql`
+  - `sudo apt-get install libpq-dev ruby-dev`
+  More info here: https://devcenter.heroku.com/articles/local-setup-heroku-postgres
+5. Run this command to get local dependencies installed: `bundle install --without production`
 6. Run this command `sudo -u postgres psql`. in the command line it should say `postgres=#` which means your within the postgres interface.
-7. Run all of these commands to set it up.
+7. If you are using virtual box and have errors like `psql: FATAL: role "vagrant" does not exist`, run this command `sudo -u postgres createuser vagrant -s && sudo -u postgres createdb vagrant`
+8. Run all of these commands to set it up.
   - `CREATE DATABASE app_devo1;`
   - `CREATE DATABASE app_test1;`
   - `CREATE DATABASE app_prod1;`
@@ -28,9 +32,9 @@ UNI: rg3551
   - `GRANT ALL PRIVILEGES ON DATABASE app_test1 TO username;`
   - `GRANT ALL PRIVILEGES ON DATABASE app_prod1 TO username;`
   - `EXIT`
-4. Now run these commands to setup the DB: `rake db:migrate`. Then: `rake db:seed`.
-5. Now, run `rails server`. On your browser, go to `localhost:3000` to view the page!
-6. If you are seeing an error regarding a database not existing, or DB art objects not being present, then try to recreate the DB again with these commands:
+9. Now run these commands to setup the DB: `rake db:migrate`. Then: `rake db:seed`.
+10. Now, run `rails server`. On your browser, go to `localhost:3000` to view the page!
+11. If you are seeing an error regarding a database not existing, or DB art objects not being present, then try to recreate the DB again with these commands:
   - `rake db:drop` --> `rake db:create` --> `rake db:migrate` --> `rake db:seed`. Now try `rails server` again the page should load now.
 
 ## How to test art piece a day feature
