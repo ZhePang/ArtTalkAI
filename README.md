@@ -110,4 +110,4 @@ Heroku commands
 - App : enigmatic-shore-08561
 - Lucid chart (plans, division of work, app diagrams, etc): https://lucid.app/lucidspark/d9f17524-badb-411f-bb76-b369b13f4705/edit?invitationId=inv_de2c4178-d16f-414f-97ea-470f00e82bff&page=0_0
 - Art source: https://www.brushwiz.com/most-famous-paintings
-
+- App deployed here: https://enigmatic-shore-08561-5dc7372f350a.herokuapp.com/arts
