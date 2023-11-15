@@ -97,6 +97,12 @@ Running server
 View all possible routes
 - rails routes
 
+Heroku commands
+- git push heroku master
+- heroku run rake db:migrate
+- heroku run rake db:seed
+- heroku pg:reset postgresql-triangular-46610 --app enigmatic-shore-08561 --confirm enigmatic-shore-08561
+
 ## Notes
 - Need to be using ruby 2.6.6  
 - Please refer to README.md in the git repo root directory.  
@@ -104,3 +110,4 @@ View all possible routes
 - App : enigmatic-shore-08561
 - Lucid chart (plans, division of work, app diagrams, etc): https://lucid.app/lucidspark/d9f17524-badb-411f-bb76-b369b13f4705/edit?invitationId=inv_de2c4178-d16f-414f-97ea-470f00e82bff&page=0_0
 - Art source: https://www.brushwiz.com/most-famous-paintings
+
