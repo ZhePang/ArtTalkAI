@@ -65,5 +65,10 @@ module Rottenpotatoes
     # Fix for Heroku deploy
     config.assets.initialize_on_precompile = false
 
+    # Fix for heroku deploy for openAI failure
+    config.enable_dependency_loading = true
+    config.autoload_paths << Rails.root.join('lib')
+
+
   end
 end
