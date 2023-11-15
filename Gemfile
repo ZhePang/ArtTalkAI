@@ -50,5 +50,5 @@ end
 # in production environments by default.
 
 gem 'sass-rails', '>= 6'
-gem 'uglifier', '>= 2.7.1'
+# gem 'uglifier', '>= 2.7.1'
 gem 'jquery-rails'

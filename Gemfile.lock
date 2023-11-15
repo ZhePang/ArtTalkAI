@@ -278,8 +278,6 @@ GEM
       railties (>= 6.0.0)
     tzinfo (1.2.11)
       thread_safe (~> 0.1)
-    uglifier (4.2.0)
-      execjs (>= 0.3.0, < 3)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -316,7 +314,6 @@ DEPENDENCIES
   sass-rails (>= 6)
   simplecov
   turbo-rails
-  uglifier (>= 2.7.1)
   web-console (>= 3.3.0)
 
 RUBY VERSION

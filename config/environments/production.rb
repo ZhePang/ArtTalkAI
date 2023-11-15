@@ -16,7 +16,7 @@ Rottenpotatoes::Application.configure do
 
   # Compress JavaScripts and CSS
   # Modified for some heroku prod push failure
-  config.assets.js_compressor = Uglifier.new(harmony: true)
+  # config.assets.js_compressor = Uglifier.new(harmony: true)
 
   # DO fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
