@@ -5,7 +5,7 @@ ruby '2.6.6'
 gem 'rails', '6.0.4'
 
 # for Heroku deployment 
-group :development, :test do
+group :development, :test, :production do
   gem 'pg', '< 1.0'
   gem 'bootstrap', '~> 5.0'
   gem 'byebug'
@@ -30,20 +30,6 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'simplecov', :require => false
-end
-group :production do
-  gem 'pg', '< 1.0'
-  gem 'bootstrap', '~> 5.0'
-  gem 'byebug'
-  gem 'database_cleaner', '1.4.1'
-  gem 'capybara', '>= 2.15'
-  gem 'launchy'
-  gem 'rspec-rails'
-  gem 'rails-controller-testing'
-  gem 'ZenTest', '4.11.2'
-  gem "ruby-openai"
-  gem "dotenv-rails"
-  gem "turbo-rails"
 end
 
 # Gems used only for assets and not required
