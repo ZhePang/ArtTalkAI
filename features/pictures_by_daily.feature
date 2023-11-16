@@ -28,8 +28,56 @@ Scenario: View Picture Details
   Given I am on the detailed page of the art piece of the day
   Then I should have the title, description, and release date of the art piece of the day
 
-# The Chatbot Feature is to be implemented in the next iteration
-#Scenario: Access Chatbot from Picture of the Day
-#  Given I am viewing the Picture of the Day
-#  When I click the chatbot link
-#  Then I should be connected to the chatbot for further information
+Scenario: View Gallery from Daily Art Piece and back
+  Given I am on the ArtTalkAI home page
+  When I follow "Click here to view the Gallery Section"
+  Then I should be on the gallery page
+  And I should have all infos of each art
+  When I click the first link of "Back to art of the day"
+  Then I should be on the ArtTalkAI home page
+
+Scenario: Visit Picture Details from Gallery and back
+  Given I am on the gallery page
+  When I click the first link of "Click to Read More"
+  Then I should have the art infos
+  When I follow "Click here to view the Gallery Section"
+  Then I should be on the gallery page
+
+Scenario: Access Chatbot from Art Detailed Page and Get Back from the Chatbot to the Detailed Page
+  Given I am on the detailed page of the art piece of the day
+  When I follow "Talk to our ArtGuide?"
+  Then I should have a new chat created with the ArtGuide and saying welcome of the art
+  When I follow "Back to Details"
+  Then I should be on the detailed page of the art piece of the day
+
+Scenario: Create new chat manually at Chatbot Page
+  Given I am on the Chatbot page
+  When I press "+ New Chat"
+  Then I should open a new chat with a link to the gallery
+  When I follow "Go to Gallery"
+  Then I should be on the gallery page
+
+Scenario: Send message to Chatbot
+  Given I am on the detailed page of the art piece of the day
+  When I follow "Talk to our ArtGuide?"
+  And I fill in "chat[message]" with "who painted this?"
+  And I press "Send a message"
+
+Scenario: Access past conversations at Chatbot page
+  Given I am on the gallery page
+  And I click the first link of "Click to Read More"
+  And I follow "Talk to our ArtGuide?"
+  And I follow "Back to Details"
+  And I follow "Click here to view the Gallery Section"
+  And I click the second link of "Click to Read More"
+  And I follow "Talk to our ArtGuide?"
+  And I follow "Back to Details"
+  And I follow "Click here to view the Gallery Section"
+  And I click the third link of "Click to Read More"
+  And I follow "Talk to our ArtGuide?"
+  When I follow "Mona Lisa"
+  Then I should have the conversation on "Mona Lisa"
+  When I follow "Starry Night"
+  Then I should have the conversation on "Starry Night"
+  When I follow "Tsunami"
+  Then I should have the conversation on "Tsunami"

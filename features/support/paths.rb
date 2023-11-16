@@ -16,6 +16,8 @@ module NavigationHelpers
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
     when /^the (ArtTalkAI )?home\s?page$/ then '/arts'
     when /^the detailed page of the art piece of the day$/ then art_path(Art.find(DateTime.now.strftime('%d').to_i % (Art.count) + 1).id)
+    when /^the gallery page$/ then '/arts/gallery'
+    when /^the Chatbot page$/ then '/chats'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

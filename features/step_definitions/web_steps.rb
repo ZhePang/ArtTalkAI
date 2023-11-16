@@ -50,11 +50,27 @@ When /^(?:|I )go to (.+)$/ do |page_name|
 end
 
 When /^(?:|I )press "([^"]*)"$/ do |button|
-  click_button(button)
+  if button == "Send a message"
+      find("#button-addon2").click
+  else
+      click_button(button)
+  end
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
+end
+
+When /I click the first link of "([^"]*)"$/ do |link|
+    page.all('a', text: link)[0].click
+end
+
+When /I click the second link of "([^"]*)"$/ do |link|
+    page.all('a', text: link)[1].click
+end
+
+When /I click the third link of "([^"]*)"$/ do |link|
+    page.all('a', text: link)[2].click
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
