@@ -1,10 +1,10 @@
 class Chat < ApplicationRecord
     attr_accessor :message
 
-    def create_initial_prompt(art_title)
+    def create_initial_prompt(art_title, art_author)
         # Construct the prompt using the art title
-        self.initial_prompt = "You are a guide who introduces fun facts about the painting '#{art_title}'."
-        self.welcome = "Hi there! What do you want to know about the painting '#{art_title}'?"
+        self.initial_prompt = "You are a guide who introduces fun facts about the painting '#{art_title}' by '#{art_author}'."
+        self.welcome = "Hi there! What do you want to know about the painting '#{art_title}' by '#{art_author}'?"
         self.title = art_title
         # Additional logic to call ChatGPT with the prompt, if necessary
     end

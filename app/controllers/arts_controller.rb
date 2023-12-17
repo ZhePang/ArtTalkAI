@@ -21,7 +21,7 @@ class ArtsController < ApplicationController
       @show_gallery = false
       @art = Art.find(id) # look up art by unique ID
       @first_art = Art.find(id) # look up art by unique ID
-      session[:art_info] = { id: @art.id, title: @art.title }
+      session[:art_info] = { id: @art.id, title: @art.title, author: @art.author }
       # will render app/views/arts/show.<extension> by default
     end
   end

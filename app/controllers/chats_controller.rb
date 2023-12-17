@@ -24,7 +24,7 @@ class ChatsController < ApplicationController
         redirect_to chat_url(Chat.find_by(title: session[:art_info][:title]))
       else
         @chat = Chat.new
-        @chat.create_initial_prompt(session[:art_info][:title])
+        @chat.create_initial_prompt(session[:art_info][:title], session[:art_info][:author])
         @chat.save
         redirect_to chat_path(@chat)
       end

@@ -32,9 +32,9 @@ end
 Then /I should have a new chat created with the ArtGuide and saying welcome of the art/ do
     text = Art.find(DateTime.now.strftime('%d').to_i % (Art.count) + 1).title
     if page.respond_to? :should
-        page.should have_content("Hi there! What do you want to know about the painting '#{text}'?")
+        page.should have_content("Hi there! What do you want to know about the painting '#{text}'")
     else
-        assert page.has_content?("Hi there! What do you want to know about the painting '#{text}'?")
+        assert page.has_content?("Hi there! What do you want to know about the painting '#{text}'")
     end
 end
 
@@ -76,8 +76,8 @@ end
 
 Then /I should have the conversation on "([^"]*)"/ do |text|
     if page.respond_to? :should
-        page.should have_content("Hi there! What do you want to know about the painting '#{text}'?")
+        page.should have_content("Hi there! What do you want to know about the painting '#{text}'")
     else
-        assert page.has_content?("Hi there! What do you want to know about the painting '#{text}'?")
+        assert page.has_content?("Hi there! What do you want to know about the painting '#{text}'")
     end
 end

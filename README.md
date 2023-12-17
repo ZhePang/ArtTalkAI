@@ -60,7 +60,7 @@ UNI: rg3551
 5. The conversations on each art piece are stored in the database and you can select on the chat list at the left of the page to go to existing conversations.
 6. If you click the `New Chat` button, you would have a new conversation where the ArtGuide serves just like a chatbot without any information. You can go back to the gallery by clicking `Go to Gallery`.
 7. **ArtGuide is powered by OpenAI API and sometimes has long respond times. Please wait for the response within 30 seconds.**
-8. Feature of Deleting past conversations is still in development and will be available in the next iteration. Do not delete your past conversation at this time. 
+8. You can delete past conversations by going to past conversations and click the delete button in the chat history
 
 ## How To Add More Art Pieces
 1. From the ArtTalkAI directory, go to the `db` folder.
