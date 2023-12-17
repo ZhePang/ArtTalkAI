@@ -103,6 +103,9 @@ Heroku commands
 - heroku run rake db:seed
 - heroku pg:reset postgresql-triangular-46610 --app enigmatic-shore-08561 --confirm enigmatic-shore-08561
 
+Enabling copy and paste linux vm cmd
+- sudo VBoxClient --clipboard
+
 ## Notes
 - Need to be using ruby 2.6.6  
 - Please refer to README.md in the git repo root directory.  
