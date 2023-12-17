@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ChatsHelper. For example:
-#
-# describe ChatsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe ChatsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "chats helper" do
+    it "list_name with chat title present" do
+      chat1 = Chat.new({:id => '99999', :title => 'Hello Columbia Uni'})
+      expect(list_name(chat1)).to eq("Hello Columbia Uni")
+    end
+
+    it "list_name with chat title not present should render chat id" do
+      chat1 = Chat.new({:id => '12345'})
+      expect(list_name(chat1)).to eq("Chat 12345")
+    end
+  end
 end

@@ -37,6 +37,11 @@ UNI: rg3551
 11. If you are seeing an error regarding a database not existing, or DB art objects not being present, then try to recreate the DB again with these commands:
   - `rake db:drop` --> `rake db:create` --> `rake db:migrate` --> `rake db:seed`. Now try `rails server` again the page should load now.
 
+## How to check code coverage
+1. Run `bundle exec cucumber && bundle exec rspec`
+3. From the project root dir, go to the coverage folder and double click the on the `index.html` file.
+4. You should see on the bottom right of the page that it says "using Cucumber Features, RSpec". That means you are seeing the full coverage report from both Cucumber and RSpec together.
+
 ## How to test art piece a day feature
 1. ArtTalkAI depends on the system time to show the art of the day.
 2. So, if you want to see the behavior for what art piece is shown per day you need to change your computer system time to a different day.

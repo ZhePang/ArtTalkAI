@@ -15,10 +15,10 @@ Feature: Display Picture of the Day
 Background: arts in database
 
   Given the following arts exist:
-  | id | title        | description                                                                                                                 | link             | release_date |
-  | 1 | Mona Lisa    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. | monalisa.jpeg    |   1503-01-01 |
-  | 2 | Starry Night | Description of Art 2.                                                                                                       | starrynight.jpeg |   1789-06-06 |
-  | 3 | Tsunami      | Description of Art 3, Tsunami. Blah blah blah.                                                                              | tsunami.png      |   0800-12-31 |
+  | id | title        | author  | description               | link             | release_date  |
+  | 1  | Mona Lisa    | Author1 | Description of Art 1.     | monalisa.jpeg    | 1503-01-01    |
+  | 2  | Starry Night | Author2 | Description of Art 2.     | starrynight.jpeg | 1789-06-06    |
+  | 3  | Tsunami      | Author3 | Description of Art 3.     | tsunami.png      | 0800-12-31    |
 
 Scenario: View Daily Art Piece
   Given I am on the ArtTalkAI home page
@@ -26,7 +26,7 @@ Scenario: View Daily Art Piece
 
 Scenario: View Picture Details
   Given I am on the detailed page of the art piece of the day
-  Then I should have the title, description, and release date of the art piece of the day
+  Then I should have the title, author, description, and release date of the art piece of the day
 
 Scenario: View Gallery from Daily Art Piece and back
   Given I am on the ArtTalkAI home page
