@@ -23,8 +23,9 @@
             <h2><%= art.title %></h>
             <div><%= image_tag art.link, class: "img-fluid", style: "max-width: 200px; height: auto;" %></div>
             <ul>
-              <li><%= art.release_date.strftime("%B %d, %Y") %></li>
-              <li><%= art.description %></li>
+              <li><b>Author:</b> <%= art.author %></li>
+              <li><b>Release Date:</b> <%= art.release_date.strftime("%B %d, %Y") %></li>
+              <li><b>Description:</b> <%= art.description %></li>
             </ul>
             <div><%= link_to "Click to Read More", art_path(art.id) %></div>
           </td>
@@ -55,10 +56,15 @@
         <br/><br/>
         <h2>Details about <em><%= @art.title %></em></h2>
 
+        <ul id="author">
+          <li>
+            <b>Author:</b> <%= @art.author %>
+          </li>
+        </ul>
+
         <ul id="details">
         <li>
-            Released on:
-            <%= @art.release_date.strftime("%B %d, %Y") %>
+          <b>Released on:</b> <%= @art.release_date.strftime("%B %d, %Y") %>
         </li>
         </ul>
 

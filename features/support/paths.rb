@@ -13,7 +13,6 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
     when /^the (ArtTalkAI )?home\s?page$/ then '/arts'
     when /^the detailed page of the art piece of the day$/ then art_path(Art.find(DateTime.now.strftime('%d').to_i % (Art.count) + 1).id)
     when /^the gallery page$/ then '/arts/gallery'
