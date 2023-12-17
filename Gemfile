@@ -18,6 +18,7 @@ group :development, :test, :production do
   gem "ruby-openai"
   gem "dotenv-rails"
   gem "turbo-rails"
+  gem 'cryptology'
 end
 
 group :development do

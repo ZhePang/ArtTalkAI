@@ -79,6 +79,7 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    cryptology (2.1.0)
     cucumber (8.0.0)
       builder (~> 3.2, >= 3.2.4)
       cucumber-ci-environment (~> 9.0, >= 9.0.4)
@@ -299,6 +300,7 @@ DEPENDENCIES
   bootstrap (~> 5.0)
   byebug
   capybara (>= 2.15)
+  cryptology
   cucumber-rails
   cucumber-rails-training-wheels
   database_cleaner (= 1.4.1)
