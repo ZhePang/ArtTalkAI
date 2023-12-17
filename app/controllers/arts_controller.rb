@@ -34,15 +34,4 @@ class ArtsController < ApplicationController
     @content = "show"
     session.delete(:art_info)
   end
-
-  def new
-    # default: render 'new' template
-  end
-
-  private
-  # Making "internal" methods private is not required, but is a common practice.
-  # This helps make clear which methods respond to requests, and which ones do not.
-  def art_params
-    params.require(:art).permit(:title, :description, :link, :release_date)
-  end
 end
